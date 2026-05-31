@@ -1,79 +1,111 @@
-Carbon Emission Dataset Analysis
-Project Overview
-This project presents an exploratory data analysis of the Carbon Emission Dataset using Python. The work was completed as part of the Advanced Python Project for the second semester of 2025/2026.
+# Carbon Emission Dataset Analysis
 
-The main objective of this project is to clean the dataset, explore the most important variables, create visualizations, study relationships between features, and analyze time-based behavior of carbon emissions using Pandas, NumPy, Matplotlib, and Seaborn.
+## Project Overview
+This project presents an exploratory data analysis of the **Carbon Emission Dataset** using Python.  
+The work was completed as part of the *Advanced Python Project* for the second semester of 2025/2026.
 
-Dataset
-The dataset used in this project is carbon_emission_dataset_with_Industry.csv. It contains daily company-level records that combine operational, financial, and environmental indicators such as energy consumption, production output, transport distance, carbon tax, expected renewable share, and the target variable Carbon_Emission_tCO2e_TARGET.
+The main objective is to clean the dataset, explore the most important variables, create visualizations,
+study relationships between features, and analyze time‑based behavior of carbon emissions using
+Pandas, NumPy, Matplotlib, and Seaborn.
 
-Tools and Libraries
-The project was developed using the following Python libraries:
+## Dataset
+The dataset used in this project is **`carbon_emission_dataset_with_Industry.csv`**.  
+It contains daily company‑level records that combine operational, financial, and environmental
+indicators, such as:
 
-Pandas
+- Energy consumption (total, renewable, non‑renewable)
+- Production output
+- Supply chain transport distance
+- Raw material usage
+- Carbon tax and energy cost
+- Expected renewable share and expected carbon reduction
+- Industry sectors and social impact indicators
+- Target variable: **`Carbon_Emission_tCO2e_TARGET`**
 
-NumPy
+## Tools and Libraries
+The analysis was implemented using:
 
-Matplotlib
+- Python 3
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Statsmodels (for time‑series decomposition)
 
-Seaborn
+## Project Tasks
+This project covers the required assignment tasks:
 
-Statsmodels
+1. **Load and inspect data**
+   - Import the dataset, view the first rows, check `info()` and `describe()`.
 
-Project Tasks
-This project covers the following required tasks:
+2. **Data cleaning**
+   - Handle missing values.
+   - Remove duplicate rows.
+   - Convert the `Date` column to datetime.
+   - Ensure numeric and categorical data types are correct.
 
-Load and inspect the dataset.
+3. **Exploratory (Univariate) analysis**
+   - Compute mean, median, min, and max for:
+     `Total_Energy_Consumption_kWh`,
+     `Renewable_Energy_Consumption_kWh`,
+     `NonRenewable_Energy_Consumption_kWh`,
+     `Production_Output_Units`,
+     `Supply_Chain_Transport_km`.
+   - Plot distributions (histograms + KDE) and frequency bar charts.
+   - Plot energy variables over time.
 
-Handle missing values and adjust data types.
+4. **Bivariate & multivariate analysis**
+   - Scatter plots between key energy variables and emissions.
+   - Correlation heatmap for numerical variables.
+   - Box plot of `Carbon_Emission_tCO2e_TARGET` by `Industry_Sectors`.
+   - Pairplot for selected features.
+   - Grouped analysis of emissions by industry sector.
 
-Compute basic statistics for selected variables.
+5. **Time‑series analysis**
+   - Plot emissions over time.
+   - Plot rolling mean and rolling variance.
+   - Apply time‑series decomposition (trend and seasonality).
 
-Plot distributions and frequency charts.
+6. **Analytical questions (Q1–Q5)**
+   - Identify emission sources with highest variability.
+   - Check whether emissions are normally distributed.
+   - Find variables most strongly correlated with emissions.
+   - Discuss the presence of a trend in emissions.
+   - Discuss possible seasonal patterns.
 
-Create line plots and scatter plots.
+## Main Findings
+- Energy‑related variables, especially **total** and **non‑renewable** energy consumption,
+  show the highest variability in the dataset.
+- Carbon emissions are strongly positively correlated with:
+  - `NonRenewable_Energy_Consumption_kWh`
+  - `Carbon_Tax_USD`
+  - `Total_Energy_Consumption_kWh`
+- `Expected_Renewable_Share_Percent` is negatively correlated with emissions, suggesting
+  that higher expected renewable share is associated with lower carbon emissions.
+- The distribution of `Carbon_Emission_tCO2e_TARGET` is skewed and does **not** follow a
+  perfect normal distribution.
+- Time‑series plots and rolling statistics reveal structured temporal behavior rather than
+  purely random fluctuations.
 
-Perform bivariate and multivariate analysis.
+## Files Included
+Typical repository contents:
 
-Build a correlation heatmap and pairplot.
+- `carbon_emission_required_only.ipynb` – main notebook with code and figures.
+- `carbon_emission_report.pdf` – final report summarizing the analysis.
+- `carbon_emission_dataset_with_Industry.csv` – dataset (if allowed to include).
+- `README.md` – this project description.
 
-Analyze emissions by industry sector.
+## How to Run
+1. Open the notebook in **Google Colab** or **Jupyter Notebook**.
+2. Upload `carbon_emission_dataset_with_Industry.csv` to the notebook environment.
+3. Update the file path if necessary.
+4. Run all cells from top to bottom.
+5. Review the output tables, charts, and the answers to Q1–Q5.
 
-Perform time series analysis using rolling statistics and decomposition.
+## Course Information
+- **Course:** Advanced Python Project  
+- **Semester:** Second Semester 2025/2026  
+- **Instructors:** Dr. Ali Azwai and Dr. Ala Abuthawabeh  
 
-Answer the required analytical questions Q1–Q5.
-
-Main Findings
-The analysis shows that total energy consumption and non-renewable energy consumption have the highest variability in the dataset. Carbon emissions are most strongly correlated with non-renewable energy consumption, carbon tax, and total energy consumption, while expected renewable share has a negative relationship with carbon emissions.
-
-The results also suggest that carbon emissions are not normally distributed and that time-based patterns can be observed through rolling statistics and time-series plots.
-
-Files Included
-The repository can include the following files:
-
-carbon_emission_required_only.ipynb – the main notebook file.
-
-carbon_emission_report.pdf – the final project report.
-
-carbon_emission_dataset_with_Industry.csv – the dataset file.
-
-README.md – project description and usage instructions.
-
-How to Run
-Open the notebook in Google Colab or Jupyter Notebook.
-
-Upload the dataset file carbon_emission_dataset_with_Industry.csv.
-
-Run the notebook cells from top to bottom.
-
-Review the visualizations, statistics, and answers to Q1–Q5.
-
-Course Information
-Course: Advanced Python Project
-
-Semester: Second Semester 2025/2026
-
-Instructors: Dr. Ali Azwai and Dr. Ala Abuthawabeh
-
-Author
-Prepared as a university project submission for the Carbon Emission Dataset assignment.
+## Author
+**Student:** Mohamed Alramamneh
